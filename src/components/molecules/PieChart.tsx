@@ -61,7 +61,7 @@ export function PieChartData({ data }: any) {
         };
     });
     const totalCards = React.useMemo(() => {
-        return chartData.reduce((acc: number, curr: { status: string, amount: number }) => acc + curr.amount, 0)
+        return chartData?.reduce((acc: number, curr: { status: string, amount: number }) => acc + curr.amount, 0)
     }, [chartData])
 
     return (
