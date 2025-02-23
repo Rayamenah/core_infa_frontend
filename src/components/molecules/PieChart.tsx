@@ -52,7 +52,7 @@ const chartConfig = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function PieChartData({ data }: any) {
-    const chartData = data.map((item: { status: string; amount: number }) => {
+    const chartData = data?.map((item: { status: string; amount: number }) => {
         const found = existingChartData.find(c => c.status === item.status);
         return {
             status: item.status,

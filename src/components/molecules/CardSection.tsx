@@ -42,7 +42,7 @@ const CardSection = ({ total_active_cards, total_personalized_cards, total_reven
     ]
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-2">
-            {card.map((item, index) => (
+            {card?.map((item, index) => (
                 <Card key={index} className='shadow-none'>
                     <CardHeader className='flex flex-col rounded-[10px]'>
                         {item.icon}

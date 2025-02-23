@@ -56,7 +56,7 @@ const Page = async () => {
                 </TableHeader>
 
                 <TableBody>
-                    {cardRequest.map((card: Response) => (
+                    {cardRequest?.map((card: Response) => (
                         <TableRow key={card.id}>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.branch_name}</TableCell>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.initiator}</TableCell>

@@ -59,7 +59,7 @@ export function AppSidebar() {
 
                             <SidebarGroupLabel className="text-[#7E8B9C] text-[8px] font-normal tracking-[0.5px] w-fit mt-4 mb-2">MAIN MENU</SidebarGroupLabel>
 
-                            {tabs.map((tab) => (
+                            {tabs?.map((tab) => (
                                 <SidebarMenuItem
                                     className="flex justify-center"
                                     key={tab.name}>
