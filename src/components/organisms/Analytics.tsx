@@ -30,7 +30,7 @@ const Analytics = ({ data }: { data: any }) => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-2 w-full overflow-auto'>
-                    <DataTable data={recent_card_requests.splice(0, 4)} />
+                    <DataTable data={recent_card_requests?.splice(0, 4) || []} />
                     <PieChartData data={card_status_distribution} />
                 </div>
             </div>
