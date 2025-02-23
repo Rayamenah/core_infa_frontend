@@ -101,7 +101,7 @@ const Page = () => {
             if (!response.ok) {
                 throw new Error(`Failed to submit profile: ${response.statusText}`);
             }
-
+            alert("profile created");
             const result = await response.json();
             console.log("Profile created successfully:", result);
         } catch (error) {

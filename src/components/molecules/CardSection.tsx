@@ -28,7 +28,7 @@ const CardSection = ({ total_active_cards, total_personalized_cards, total_reven
         {
             title: 'Todays Revenue',
             icon: <BadgeDollarSignIcon className='text-[#2087E7]' />,
-            amount: `${total_revenue}M`,
+            amount: total_revenue + 'M',
             percentage: 6,
             time: 'vs yesterday'
         },

@@ -8,9 +8,11 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useParams } from 'next/navigation';
+import { format } from 'date-fns';
 
 
 interface Response {
+    created_at: string
     branch_name: string
     initiator: string
     card_type: string
@@ -21,6 +23,7 @@ interface Response {
 }
 const Page = () => {
     const [card, setCard] = useState<Response>({
+        created_at: '',
         branch_name: '',
         initiator: '',
         card_type: '',
@@ -148,11 +151,11 @@ const Page = () => {
                             )}
                             <div className='w-full xl:w-[448px] h-[70px]'>
                                 <div className="text-sm text-[#344054] font-medium" >Date Requested</div>
-                                <div></div>
+                                <div>{format(card?.created_at, "d, MMM, yyyy")}</div>
                             </div>
                             <div className='w-full xl:w-[448px] h-[70px]'>
                                 <div className="text-sm text-[#344054] font-medium">Status</div>
-                                <div className='py-1 px-3 flex justify-start items-center mt-3'>{status}</div>
+                                <div className='py-1 px-3 flex w-[120px] h-[30px] rounded-[16px] border text-base bg-[#FEDF89] text-[#B54708] justify-center items-center mt-3'>{status}</div>
                             </div>
                         </div>
                         <div className='text-[#344054] text-sm mt-5 mb-3 font-bold w-fit'>Actions</div>
