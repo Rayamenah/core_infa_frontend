@@ -9,6 +9,18 @@ import {
 import { Card, CardHeader } from "../ui/card"
 import Link from "next/link"
 
+interface Response {
+    id: number;
+    branch_name: string;
+    initiator: string;
+    quantity: number;
+    batch: string;
+    card_type: string;
+    created_at: string
+    status: string
+    date_requested: string;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function DataTable({ data }: any) {
     return (
@@ -26,7 +38,7 @@ export function DataTable({ data }: any) {
                 </TableHeader>
 
                 <TableBody>
-                    {data.map((card) => (
+                    {data.map((card: Response) => (
                         <TableRow key={card.id}>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.branch_name}</TableCell>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.card_type}</TableCell>

@@ -50,6 +50,7 @@ const chartConfig = {
     },
 } satisfies ChartConfig
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function PieChartData({ data }: any) {
     const chartData = data.map((item: { status: string; amount: number }) => {
         const found = existingChartData.find(c => c.status === item.status);
@@ -60,8 +61,8 @@ export function PieChartData({ data }: any) {
         };
     });
     const totalCards = React.useMemo(() => {
-        return chartData.reduce((acc, curr) => acc + curr.amount, 0)
-    }, [])
+        return chartData.reduce((acc: number, curr: { status: string, amount: number }) => acc + curr.amount, 0)
+    }, [chartData])
 
     return (
         <Card className="flex flex-col w-full">
@@ -119,7 +120,7 @@ export function PieChartData({ data }: any) {
                 </ChartContainer>
             </CardContent>
             <CardFooter className="flex justify-around gap-2 text-sm">
-                {chartData.map((work) => (
+                {chartData.map((work: { status: string, amount: number, fill: string }) => (
                     <div key={work.status} className="flex items-center gap-2">
                         <div
                             className="size-[10px] md:size-[5px] xl:size-[10px] rounded-full bg-[#F6F6F6]"

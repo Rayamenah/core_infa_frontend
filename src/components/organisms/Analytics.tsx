@@ -5,6 +5,7 @@ import CardSection from '../molecules/CardSection'
 import { DataTable } from '../molecules/DataTable'
 import { PieChartData } from '../molecules/PieChart'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Analytics = ({ data }: { data: any }) => {
 
     const { total_active_cards, total_personalized_cards, total_revenue, pending_request, monthly_issuance, this_week_income, card_status_distribution, recent_card_requests } = data

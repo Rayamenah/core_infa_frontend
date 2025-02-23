@@ -17,6 +17,17 @@ const fetchCardRequest = async () => {
     }
 };
 
+interface Response {
+    id: number;
+    branch_name: string;
+    initiator: string;
+    quantity: number;
+    batch: string;
+    created_at: string
+    status: string
+    date_requested: string;
+}
+
 const Page = async () => {
     const cardRequest = await fetchCardRequest()
     return (
@@ -45,7 +56,7 @@ const Page = async () => {
                 </TableHeader>
 
                 <TableBody>
-                    {cardRequest.map((card) => (
+                    {cardRequest.map((card: Response) => (
                         <TableRow key={card.id}>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.branch_name}</TableCell>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.initiator}</TableCell>
