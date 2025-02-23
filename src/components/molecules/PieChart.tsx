@@ -120,7 +120,7 @@ export function PieChartData({ data }: any) {
                 </ChartContainer>
             </CardContent>
             <CardFooter className="flex justify-around gap-2 text-sm">
-                {chartData.map((work: { status: string, amount: number, fill: string }) => (
+                {chartData?.map((work: { status: string, amount: number, fill: string }) => (
                     <div key={work.status} className="flex items-center gap-2">
                         <div
                             className="size-[10px] md:size-[5px] xl:size-[10px] rounded-full bg-[#F6F6F6]"

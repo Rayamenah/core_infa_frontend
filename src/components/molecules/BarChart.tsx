@@ -28,7 +28,7 @@ const chartConfig = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function CardBarChart({ data }: any) {
-    const chartData = data.map((item: { name: string; personalized: number; instant: number }) => ({
+    const chartData = data?.map((item: { name: string; personalized: number; instant: number }) => ({
         month: item.name,
         personalized: item.personalized,
         instant: item.instant,

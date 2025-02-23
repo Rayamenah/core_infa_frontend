@@ -23,7 +23,7 @@ const chartConfig = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function AreaChart({ data }: any) {
-    const chartData = data.map((item: { day: string; amount: number }) => ({
+    const chartData = data?.map((item: { day: string; amount: number }) => ({
         day: item.day,
         amount: item.amount
     }))

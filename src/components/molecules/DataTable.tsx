@@ -38,7 +38,7 @@ export function DataTable({ data }: any) {
                 </TableHeader>
 
                 <TableBody>
-                    {data.map((card: Response) => (
+                    {data?.map((card: Response) => (
                         <TableRow key={card.id}>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.branch_name}</TableCell>
                             <TableCell className="text-[10px] text-[#475467] text-center">{card.card_type}</TableCell>
